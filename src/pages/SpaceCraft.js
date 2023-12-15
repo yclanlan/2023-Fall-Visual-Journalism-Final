@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 import { Canvas ,} from "@react-three/fiber";
 import {
   Stars,
@@ -20,6 +20,8 @@ import { OsirisRex } from "../Osiris-Rex";
 import LocationMarker from "../LocationMarker";
 
 export default function SpaceCraft() {
+  const navigate = useNavigate();
+
   return (
     <div className="model_canvas_wrapper" > 
 
@@ -32,7 +34,7 @@ export default function SpaceCraft() {
         margin:"  0 0 0 -1rem "
         }}>OSIRIS-REx</div>
    
-        <div
+        <div 
           style={{
             zIndex:"10", 
             position:"absolute",
@@ -62,7 +64,8 @@ Propulsion system:
         </div>
       </div>
 
-      <Link to="/"  className='hover'
+      <div onClick={() => navigate(-1) }
+          className='hover'
           style={{
             padding:"0.8rem 1rem",
             marginLeft: "6rem",
@@ -74,7 +77,8 @@ Propulsion system:
             border: "1px solid",
             borderColor:"white",
             borderRadius:"2rem",
-          }}> ＜  </Link>
+            zIndex:"50"
+          }}> ＜  </div>
 
 
 
@@ -97,7 +101,7 @@ Propulsion system:
       <Canvas>
         <PerspectiveCamera 
         position={[6, 1, -3]} 
-        makeDefault near={0.0001} />
+        makeDefault near={0.01} />
 
         
         <OrbitControls         
@@ -163,14 +167,14 @@ Propulsion system:
         
         
 
-        <LocationMarker
+        {/* <LocationMarker
           position={[-1.37, 2, 0]}
           scale={[6, 6, 6]}
           name={"Touch-and-Go Sample Acquisition Mechanism (TAGSAM)"}
           context={
             "This is the part of the spacecraft that actually touched Bennu, slapping its surface at the same time that it sucked up loose rocks with nitrogen gas"
           }
-        /> 
+        />  */}
 
 {/* 
         <LocationMarker

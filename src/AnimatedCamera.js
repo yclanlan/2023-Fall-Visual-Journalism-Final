@@ -7,6 +7,7 @@ export const CameraTimeline = new gsap.timeline({
 });
 
 function AnimatedCamera(props) {
+  
   const cameraRef = useRef();
 
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import {
   Stars,
@@ -13,6 +13,9 @@ import SimpleSlide from "../SimpleSlide";
 import FX from "../FX";
 
 export default function Bennu() {
+
+  const navigate = useNavigate();
+
   return (
     <div className="model_canvas_wrapper">
       <SimpleSlide viewportPosition={5} width={"30vw"} >
@@ -46,7 +49,8 @@ export default function Bennu() {
       </SimpleSlide>
 
       
-          <Link to="/"  className='hover'
+          <div onClick={() => navigate(-1) }
+          className='hover'
           style={{
             padding:"0.8rem 1rem",
             marginLeft: "2rem",
@@ -58,7 +62,10 @@ export default function Bennu() {
             border: "1px solid",
             borderColor:"white",
             borderRadius:"2rem",
-          }}> ＜  </Link>
+            color: "white",
+            zIndex: "50",
+
+          }}> ＜  </div>
 
 
 <p  
@@ -79,7 +86,7 @@ export default function Bennu() {
       
 
       <Canvas>
-        <PerspectiveCamera position={[-0.8, 0, 0.1]} makeDefault near={0.0001} />
+        <PerspectiveCamera position={[-0.8, 0, 0.1]} makeDefault near={0.01} />
         <OrbitControls
          minDistance={0.5}  
          maxDistance={2} 

@@ -343,7 +343,7 @@ function App() {
                         bottom:"2rem",
                         
                      }}>
-                      ✦ website made by Keyi & Lan ✦
+                      ✦ website made by Keyi & <a href="https://yichunlan.com">Lan</a> ✦
                      
     </div>
           </div>
