@@ -184,7 +184,7 @@ function App() {
 
         
         <SimpleSlide viewportPosition={1800}>
-          <div class={"section5"} style={{}}>
+          <div class={"section6"} style={{}}>
             <div style={{ width: "40%", paddingLeft: "5rem",lineHeight:"2.5rem" , wordSpacing:"0.1rem"}}>
               The capsule will be released when OSIRIS-REx is 63,000 miles
               (102,000 kilometers) from Earth, headed for an area spanning 250
@@ -198,9 +198,9 @@ function App() {
         </SimpleSlide>
 
 
-        <SimpleSlide viewportPosition={2500}>
-          <div class={"section6"} style={{display:"flex", width:"100%", margin: "auto", }}>
-            <div style={{ width: "100%", padding: "2rem", margin: "auto", textAlign:"center",fontSize:"2rem",lineHeight:"2.8rem" , wordSpacing:"0.1rem" }}>
+        <SimpleSlide viewportPosition={2250}>
+          <div class={"section7"} style={{display:"flex", width:"100%", margin: "auto", }}>
+            <div style={{ width: "100%", padding: "2rem", margin: "auto", textAlign:"center",fontSize:"2rem", lineHeight:"2.8rem" , wordSpacing:"0.1rem" }}>
             SAMPLE DELIVERED<br/>
             Sept. 24, 2023
             </div>
@@ -209,10 +209,10 @@ function App() {
 
 
   
-        <SimpleSlide viewportPosition={2600}>
-        <div class={"section6"} style={{ background: "black", color: "white" }}>
+        <SimpleSlide viewportPosition={2350}>
+        <div class={"section8"} style={{ background: "black", color: "white" }}>
           {/* samples now */}
-          <div style={{ padding: "2rem", width: "60%", margin: "auto",lineHeight:"2rem" , wordSpacing:"0.1rem" }}>
+          <div style={{ padding: "2rem", width: "60%", margin: "auto", lineHeight:"2rem" , wordSpacing:"0.1rem" }}>
             <div
               style={{
                 fontSize: "2rem",
@@ -326,15 +326,35 @@ function App() {
                 </Link>
                 </div>
               </div>
+
             </div>
             <br />
+            <div style={{     
+                        display: 'block',
+                        fontSize:"0.9rem",
+                        fontWeight:"400",
+                        color:"white", 
+                        
+
+                        width:"100%",
+                        margin:"auto",
+                        paddingTop:"5rem",
+                        textAlign:"center",
+                        bottom:"2rem",
+                        
+                     }}>
+                      ✦ website made by Keyi & Lan ✦
+                     
+    </div>
           </div>
         </div>
+
+
       </SimpleSlide>
 
-        
-  
-        {/* 3D scene container */}
+       
+
+
         <Scene />
       </div>
     );

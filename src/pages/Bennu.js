@@ -8,7 +8,9 @@ import {
 } from "@react-three/drei";
 
 import Object from "../Object";
+import RotatedObject from "../AnimatedEarth";
 import SimpleSlide from "../SimpleSlide";
+import FX from "../FX";
 
 export default function Bennu() {
   return (
@@ -67,12 +69,13 @@ export default function Bennu() {
             position: "fixed",
             bottom:"3rem",
             right:"5rem",
-            fontSize: "1.1rem",
+            fontSize: "1.5rem",
             fontFamily: "Lora",
             fontWeight: "500",
             textAlign:"right",
             
-          }}> Kindly await while the sizable model is loading. <br/>Thank you for your patience.  </p>
+          }}> Kindly await while the sizable model is loading. <br/>
+          Thank you for your patience.  </p>
       
 
       <Canvas>
@@ -93,14 +96,15 @@ export default function Bennu() {
         <pointLight position={[0, -1.5, -0.5]} intensity={10} />
 
         <Stars />
-      
+       <FX />
 
-        
+  
         {/* import model */}
-        <Object
-          scale={(1, 1,1)}
+        <RotatedObject
+          scale={[1, 1,1]}
           position={[0, -0.2, 0]}
-          modelUrl={"Bennu.glb"}
+          modelUrl={"Bennu-edited.glb"}
+          rotationSpeed={0.001}
         />
       </Canvas>
     </div>

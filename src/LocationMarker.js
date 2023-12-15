@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Html, MeshTransmissionMaterial } from "@react-three/drei";
+import { Html, Outlines } from "@react-three/drei";
 import "./App.css";
 
 function LocationMarker({ position, name, context, scale }) {
   const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <>
       <mesh
@@ -13,8 +14,10 @@ function LocationMarker({ position, name, context, scale }) {
         onPointerLeave={() => {
           if (isExpanded) setIsExpanded(false);
         }}
+
         position={position}
         scale={scale ? scale : [1, 1, 1]}
+
       >
         {isExpanded && (
           <Html>
@@ -24,10 +27,10 @@ function LocationMarker({ position, name, context, scale }) {
                 paddingRight: "2rem",
                 paddingTop: "1rem",
                 paddingBottom: "1rem",
-                background: "white",
-                borderRadius: "2rem",
-                color: "black",
+                background: "rgba(0,0,0,0.5)",
+                color: "white",
                 minWidth: "30vw",
+                border: "1px solid",
               }}
             >
               <h3>{name}</h3>
@@ -35,8 +38,10 @@ function LocationMarker({ position, name, context, scale }) {
             </div>
           </Html>
         )}
-        <sphereGeometry args={[isExpanded ? 0.022 : 0.02]} />
-        <meshBasicMaterial color="white" />
+        
+        <sphereGeometry args={[isExpanded ? 0.02 : 0.02]} />
+        <meshBasicMaterial transparent={"true"} opacity={0} />
+        <Outlines thickness={0.005} color="hotpink" />
         {/* <MeshTransmissionMaterial color = "white"/> */}
       </mesh>
     </>

@@ -23,7 +23,10 @@ function Object(props) {
       rotation={rotation ? rotation : [0, 0, 0]}
       scale={scale ? scale : [1,1,1]}
       object={gltf.scene}
-    ></primitive>
+    >
+      <meshBasicMaterial />
+            {/* <meshToonMaterial /> */}
+    </primitive>
   );
 
   // <PerspectiveCamera ref={cameraRef} makeDefault position={[0, 2, 8]} />;
